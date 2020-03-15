@@ -21,9 +21,9 @@ main proc
 	
 
       ; 2) ввод десятичного числа с клавиатуры и последующее сравнение с числм 100
-	mov var1, sval(input("Enter a number: "))
+	mov varl, sval(input("Enter a number: "))
 	
-	cmp var1, 100  ; сравнение чисел, дальше поверяеются флаги (sf, zf)  
+	cmp varl, 100  ; сравнение чисел, дальше поверяеются флаги (sf, zf)  
 	je equal    ; ==   j - прыжок e - эквивалентно вместе je, если непонятно что это, дальше аналогично
 	jg bigger   ; >
 	jl smaller  ; <
