@@ -1,4 +1,3 @@
-; ═┼ ╨└┴╬╥└┼╥!
 .686
 .model flat, stdcall
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
@@ -6,29 +5,31 @@
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
 .const
 my_day	dd 29
+num	dd 9
 
 .data
-num	dd 9 
-
-my_name	db '└ЁЄхь'
-year	dd 2001 + num
+my_name	db '└ЁЄхь',0
+year	dd 2001
 day		dd ?
-day_month	db ?,'╠рЁЄ'
+day_month	db ?,3
 
 .code
 start:
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
 main proc
-	mov eax, my_day     ; eax = 0000001D
-	mov day, eax	    ; day = 0000001D
-	mov day_month, al   ; day_month = 
-	;mov esi,offset message 
-	fn MessageBox,0,str$(my_name),"╚ь ",MB_OK
-	;mov eax, perem_1
-	fn MessageBox,0,str$(year),"├юф Ёюцфхэш  + эюьхЁ т уЁєяях",MB_OK
-	;mov edx, 12345 
-	fn MessageBox,0,str$(day),"─хэ№ Ёюцфхэш ",MB_OK
-	fn MessageBox,0,str$(day_month),"─хэ№ Ёюцфхэш , ьхё Ў Ёюцфхэш ",MB_OK
+	mov eax, num
+	add year, eax
+	mov eax, my_day
+	mov day, eax
+   	mov day_month, al
+	mov eax, offset my_name
+	fn MessageBox,0,eax,"╚ь ",MB_OK
+	mov eax, year
+	fn MessageBox,0,str$(eax),"├юф Ёюцфхэш  + эюьхЁ т уЁєяях",MB_OK
+	mov al, day_month[0]
+	fn MessageBox,0,str$(eax),"─хэ№ Ёюцфхэш ",MB_OK
+	mov al, day_month[1]
+	fn MessageBox,0,str$(eax),"╠хё Ў Ёюцфхэш ",MB_OK
 	invoke ExitProcess,0
 main endp
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл

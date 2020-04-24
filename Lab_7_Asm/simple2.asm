@@ -4,7 +4,7 @@
     include \masm32\include\masm32rt.inc
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
 .data
-message	db '▀ яЁш°хы ъ Єхсх ё яЁштхЄюь!!!'
+message	db '▀ яЁш°хы ъ Єхсх ё яЁштхЄюь!!!',0
 perem_1	dd 0f1h
 perem_2	dd 17fh
 perem_3	dd 0fah

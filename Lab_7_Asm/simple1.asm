@@ -6,7 +6,7 @@
 .data
 ;определение байта
 v1db	db ?
-v2db	db 'Ваша Фамилия'
+v2db	db 'Машенков'
 v3db	db 56
 v4db	db 04fh
 v5db	db 0110100b
