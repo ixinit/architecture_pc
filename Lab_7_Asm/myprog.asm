@@ -4,12 +4,12 @@
     include \masm32\include\masm32rt.inc
 ; ллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
 .const
-my_day	dd 29
-num	dd 9
+my_day	dd 
+num	dd 
 
 .data
-my_name	db '└ЁЄхь',0
-year	dd 2001
+my_name	db '',0
+year	dd 
 day		dd ?
 day_month	db ?,3
 
